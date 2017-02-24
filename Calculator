@@ -1,0 +1,89 @@
+package projectdue;
+
+import java.util.Scanner;
+
+public class Calculator {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+
+		// where the integers are stored
+		// char is used to adding for many thing
+		char operation;
+		int num2 = 0;
+
+		int num1 = 0;
+		int i = 0;
+
+		for (i = 0; i <= 10; i++) {// this can run 10 times
+			if (i == 0) {
+				// the user is asked what to they want
+				System.out.println("Enter an operator ( + , - , * ,or / and last to leave enter ! ) ");
+				operation = input.next().charAt(0);
+				if (operation == '!')
+				{
+				     System.out.println("Error why are leaveing me ");
+				     System.exit('!');
+				}
+				// reads character symbols like + , / , * -
+				System.out.println("Enter an integer");
+				num1 = input.nextInt();
+
+				System.out.println("Enter an integer ");
+				num2 = input.nextInt();
+				// use if else to reuse the value the num1 again so i can or use
+				// any operation
+			} else {
+				System.out.println("Enter an operator ( + , - , * ,or / and last to leave enter ! )");
+				operation = input.next().charAt(0);
+				if (operation == '!')
+				{
+				     System.out.println("Error why are leaveing me ");
+				     System.exit('!');
+				}
+
+				System.out.println("Enter an integer ");
+				num2 = input.nextInt();
+				
+				// this closes the program by checking if char is = to !
+				
+			}
+
+			while (true) {
+
+				if (operation == '+') {
+					num1 = num1 + num2;
+					System.out.println(num1);
+					break;
+				}
+
+				else if (operation == '-') {
+					num1 = num1 - num2;
+					System.out.println(num1);
+					break;
+				}
+
+				else if (operation == '*') {
+					num1 = num1 * num2;
+					System.out.println(num1);
+					break;
+				}
+
+				else if (operation == '/') {
+					num1 = num1 / num2;
+					System.out.println(num1);
+					break;
+				}
+
+				else if (operation == '%') {
+					num1 = num1 % num2 + num2;
+					System.out.println(num1);
+					break;
+				}
+
+			}
+
+		}
+	}
+
+}
